@@ -179,7 +179,7 @@ def add_puzzle_link_to_sheet(self, puzzle_url, sheet_url) -> None:
     }
     self.sheets_service().spreadsheets().values().update(
         spreadsheetId=extract_id_from_sheets_url(sheet_url),
-        range="A1:B2",
+        range="A1",
         valueInputOption="USER_ENTERED",
         body=req_body,
     ).execute()
