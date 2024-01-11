@@ -37,6 +37,7 @@ class ApiTests(CardboardTestCase, APITestCase):
                 "active": self._hunt.active,
                 "has_drive": bool(self._hunt.settings.google_drive_human_url),
                 "puzzle_tags": [],
+                "create_channel_by_default": self._hunt.settings.create_channel_by_default,
             },
         )
 
@@ -90,6 +91,7 @@ class ApiTests(CardboardTestCase, APITestCase):
                 "created_on": puzzle.created_on.astimezone(
                     timezone.get_current_timezone()
                 ).isoformat(),
+                "last_edited_on": None,
                 "recent_editors": [],
                 "top_editors": [],
             },
